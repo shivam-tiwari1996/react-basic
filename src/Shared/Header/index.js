@@ -7,6 +7,7 @@ const Header = () => {
       <p>Brand Logo</p>{" "}
       <span className="flex gap-5">
         <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
         <Link to="/about-us">About Us</Link>
         <Link to="/contact-us">Contact Us</Link>
       </span>

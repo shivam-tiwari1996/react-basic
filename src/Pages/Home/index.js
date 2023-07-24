@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Home = () => {
   const [image, setImage] = useState(1);
