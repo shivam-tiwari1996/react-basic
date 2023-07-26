@@ -5,7 +5,7 @@ const ProductDetail = () => {
   const { id, category } = useParams();
   const { state } = useLocation();
 
-  console.log(state, "state");
+  console.log(id, "id", category, "category");
   return (
     <div>
       <div className="flex gap-5">

@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import PropsDemo from "./components/PropsDemo";
 import Products from "./components/Products";
 import ProductDetail from "./components/ProductDetail";
+import ContextProps from "./components/ContextProps";
 
 function App() {
   // const name = "Rishabh";
@@ -31,6 +32,10 @@ function App() {
           <Route
             path="/products/:id/:category"
             element={<Layout component={<ProductDetail />} />}
+          />
+          <Route
+            path="/context-props"
+            element={<Layout component={<ContextProps />} />}
           />
         </Routes>
       </BrowserRouter>
