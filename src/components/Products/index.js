@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "../../Shared/ProductCard";
+import { toHaveFormValues } from "@testing-library/jest-dom/matchers";
 
 const Products = () => {
   const productsList = [
@@ -43,7 +44,7 @@ const Products = () => {
   return (
     <div className="grid grid-cols-4 gap-5 p-5">
       {productsList.map((product) => {
-        return <ProductCard productData={product} />;
+        return <ProductCard key={product.id} productData={product} />;
       })}
     </div>
   );

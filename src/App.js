@@ -6,6 +6,7 @@ import ContactUs from "./Pages/ContactUs";
 import Home from "./Pages/Home";
 import PropsDemo from "./components/PropsDemo";
 import Products from "./components/Products";
+import ProductDetail from "./components/ProductDetail";
 
 function App() {
   // const name = "Rishabh";
@@ -26,6 +27,10 @@ function App() {
           <Route
             path="/products"
             element={<Layout component={<Products />} />}
+          />
+          <Route
+            path="/products/:id/:category"
+            element={<Layout component={<ProductDetail />} />}
           />
         </Routes>
       </BrowserRouter>
