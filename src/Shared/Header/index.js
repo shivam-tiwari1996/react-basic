@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SignUp from "../../Authentication/SignUp";
 
 const Header = () => {
   return (
@@ -10,6 +11,7 @@ const Header = () => {
         <Link to="/products">Products</Link>
         <Link to="/about-us">About Us</Link>
         <Link to="/contact-us">Contact Us</Link>
+        <SignUp />
       </span>
     </div>
   );

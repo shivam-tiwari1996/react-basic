@@ -8,6 +8,7 @@ import PropsDemo from "./components/PropsDemo";
 import Products from "./components/Products";
 import ProductDetail from "./components/ProductDetail";
 import ContextProps from "./components/ContextProps";
+import { routes } from "./Routes";
 
 function App() {
   // const name = "Rishabh";
@@ -15,7 +16,13 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout component={<Home />} />} />
+          {routes.map((route) => {
+            return (
+              <Route key={route.id} path={route.path} element={route.element} />
+            );
+          })}
+
+          {/* <Route path="/" element={<Layout component={<Home />} />} />
           <Route
             path="/about-us"
             element={<Layout component={<AboutUs />} />}
@@ -36,7 +43,7 @@ function App() {
           <Route
             path="/context-props"
             element={<Layout component={<ContextProps />} />}
-          />
+          /> */}
         </Routes>
       </BrowserRouter>
     </>
