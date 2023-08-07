@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomButton from "../../Shared/CustomButtom";
 import { Button, TextField } from "@mui/material";
 
 const ReactForm = () => {
+  const [name, setName] = useState("");
   return (
     <form className="p-10 flex-col flex gap-5">
       <CustomButton color="success" variant="contained">
@@ -26,8 +27,13 @@ const ReactForm = () => {
           alt=""
           className=""
         />
-        <span className="absolute bg-white bg-opacity-25 backdrop-blur-2xl z-50 border-2 w-full flex justify-center items-center h-96">
-          <TextField />
+        <span className="absolute flex-col bg-white bg-opacity-25 backdrop-blur-2xl z-50 border-2 w-full flex justify-center items-center h-96">
+          <TextField
+            placeholder="Name"
+            className="text"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <p>{name}</p>
         </span>
       </div>
       {/* <CustomButton text="Cancel" />
