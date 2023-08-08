@@ -7,11 +7,7 @@ const ProductCard = ({ productData }) => {
   return (
     <div
       className="flex flex-col gap-3 p-3 border-2"
-      // onClick={() =>
-      //   navigate(`/products/${productData.id}/${productData.category}`, {
-      //     state: { image: productData.imaage, name: productData.name },
-      //   })
-      // }
+      onClick={() => navigate(`/product/${productData.id}`)}
     >
       <img src={productData.thumbnail} alt="" className="p-5" />
       <p>{productData.title}</p>

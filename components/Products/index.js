@@ -1,23 +1,32 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../../Shared/ProductCard";
+import { Card, Skeleton } from "@mui/material";
 
 const Products = () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
   const productList = () => {
+    setIsLoading(true);
     fetch("https://dummyjson.com/products")
-      .then((res) => {
-        return res.json();
+      .then((response) => {
+        return response.json();
       })
       .then((response) => {
         console.log(response);
         setData(response);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setIsLoading(false);
       });
   };
-
+  console.log(data);
   useEffect(() => {
     productList();
   }, []);
-
+  console.log(isLoading, "isLoading");
   // const productsList = [
   //   {
   //     id: 1,
@@ -57,10 +66,22 @@ const Products = () => {
   //   },
   // ];
   return (
-    <div className="grid grid-cols-4 gap-5 p-5">
-      {data?.products?.map((product) => {
-        return <ProductCard key={product.id} productData={product} />;
-      })}
+    <div className="grid grid-cols-5 gap-5 p-5">
+      {isLoading
+        ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map(() => {
+            return (
+              <span className="p-4 flex justify-centers flex-col">
+                <Skeleton height={200} width={200} className="!scale-100" />
+                <Skeleton className="w-8/12" />
+                <Skeleton className="w-8/12" />
+                <Skeleton className="w-8/12" />
+                <Skeleton className="w-8/12" />
+              </span>
+            );
+          })
+        : data?.products?.map((product) => {
+            return <ProductCard key={product.id} productData={product} />;
+          })}
     </div>
   );
 };

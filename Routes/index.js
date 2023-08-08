@@ -4,6 +4,7 @@ import SignUp from "../Authentication/SignUp";
 import Layout from "../Layout";
 import AboutUs from "../Pages/AboutUs";
 import Home from "../Pages/Home";
+import ProductDetail from "../components/ProductDetail";
 import Products from "../components/Products";
 import ReactForm from "../components/ReactForm";
 
@@ -37,5 +38,10 @@ export const routes = [
     id: 6,
     path: "/products",
     element: <Products />,
+  },
+  {
+    id: 7,
+    path: "/product/:id",
+    element: <ProductDetail />,
   },
 ];
