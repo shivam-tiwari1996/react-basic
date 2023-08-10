@@ -22,11 +22,12 @@ const Products = () => {
         setIsLoading(false);
       });
   };
+
   console.log(data);
   useEffect(() => {
     productList();
   }, []);
-  console.log(isLoading, "isLoading");
+
   // const productsList = [
   //   {
   //     id: 1,

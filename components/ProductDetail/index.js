@@ -14,7 +14,7 @@ const ProductDetail = () => {
   };
   useEffect(() => {
     productDetails();
-  }, [id]);
+  }, []);
 
   console.log(detail, "detail");
   return (

@@ -4,6 +4,7 @@ import SignUp from "../Authentication/SignUp";
 import Layout from "../Layout";
 import AboutUs from "../Pages/AboutUs";
 import Home from "../Pages/Home";
+import AxiosProducts from "../components/AxiosProducts";
 import ProductDetail from "../components/ProductDetail";
 import Products from "../components/Products";
 import ReactForm from "../components/ReactForm";
@@ -43,5 +44,10 @@ export const routes = [
     id: 7,
     path: "/product/:id",
     element: <ProductDetail />,
+  },
+  {
+    id: 8,
+    path: "/axios-products",
+    element: <AxiosProducts />,
   },
 ];

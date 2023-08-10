@@ -6,9 +6,11 @@ const CustomButton = ({
   color = "primary",
   rounded,
   variant = "text",
+  onClick,
 }) => {
   return (
     <button
+      onClick={onClick}
       className={classNames(
         "p-2  text-white px-5",
         color === "primary" && "bg-blue-500",
