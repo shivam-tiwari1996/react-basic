@@ -9,6 +9,7 @@ import Products from "./components/Products";
 import ProductDetail from "./components/ProductDetail";
 import ContextProps from "./components/ContextProps";
 import { routes } from "./Routes";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   // const name = "Rishabh";
@@ -46,6 +47,7 @@ function App() {
           /> */}
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 }

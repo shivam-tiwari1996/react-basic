@@ -1,6 +1,8 @@
 import { Close } from "@mui/icons-material";
 import { Button, Dialog, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { axiosInstance } from "../../Config/axiosInstance";
+import { toast } from "react-toastify";
 
 const SignUpCopy = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +22,7 @@ const SignUpCopy = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+
     // console.log(formData, "Form Submitted");
     const error = {};
     if (!formData.name) {
@@ -38,9 +41,31 @@ const SignUpCopy = () => {
     if (!formData.password) {
       error.password = "password is Required";
     }
+    const reqbody = {
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+    };
 
     if (Object.keys(error).length === 0) {
-      alert("Form Submitted");
+      axiosInstance
+        .post("register", reqbody)
+        .then((response) => {
+          console.log(response);
+          if (response?.data === "User registered successfully!!") {
+            setPage("SignIn");
+            setFormData({
+              name: "",
+              email: "",
+              phone: "",
+              password: "",
+            });
+          }
+          toast.success(response?.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
     setErrors(error);
   };
@@ -54,7 +79,6 @@ const SignUpCopy = () => {
       [event.target.id]: event.target.value,
     });
   };
-  console.log(errors, "errors");
 
   return (
     <>

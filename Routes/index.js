@@ -1,5 +1,6 @@
 import FormikDemo from "../Authentication/FormikDemo";
 import SignUp from "../Authentication/SignUp";
+import SignUpCopy from "../Authentication/SignUpCopy";
 
 import Layout from "../Layout";
 import AboutUs from "../Pages/AboutUs";
@@ -49,5 +50,10 @@ export const routes = [
     id: 8,
     path: "/axios-products",
     element: <AxiosProducts />,
+  },
+  {
+    id: 9,
+    path: "/signup-copy",
+    element: <SignUpCopy />,
   },
 ];
